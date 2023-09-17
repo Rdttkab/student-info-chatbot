@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./routes/root.tsx";
 import Index from "./routes/index.tsx";
 import Enroll from "./routes/enroll.tsx";
+import ThankYou from "./routes/thank-you.tsx";
 
 const router = createBrowserRouter([
   {

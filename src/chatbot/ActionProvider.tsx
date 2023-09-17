@@ -3,7 +3,7 @@ import { createClientMessage } from "react-chatbot-kit";
 import { useNavigate } from "react-router-dom";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleGotIt = () => {
     const userMessage = createClientMessage("Got it!", {});
 
@@ -57,6 +57,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       ...prev,
       messages: [...prev.messages, userMessage, botMessage],
     }));
+
+    setTimeout(() => {
+      navigate("/thank-you");
+    }, 5000);
   };
 
   return (
