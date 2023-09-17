@@ -2,7 +2,9 @@ import React from "react";
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message: string) => {
-    console.log(message)
+    if (message.length > 1) {
+      actions.handleAge();
+    }
   };
 
   return (

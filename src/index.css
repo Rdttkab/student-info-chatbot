@@ -7,16 +7,18 @@ body {
   min-height: 100vh;
 }
 
-#root{
-  min-height: 100vh;  
+#root {
+  min-height: 100vh;
 }
 .react-chatbot-kit-chat-container {
-width: auto !important;
-height: 100%;
+  width: auto !important;
+  height: 100%;
 }
 
-.react-chatbot-kit-chat-inner-container,.react-chatbot-kit-chat-message-container{
+.react-chatbot-kit-chat-inner-container,
+.react-chatbot-kit-chat-message-container {
   height: 100% !important;
+  overflow: scroll;
 }
 
 .react-chatbot-kit-chat-bot-message {

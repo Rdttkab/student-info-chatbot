@@ -17,6 +17,10 @@ const router = createBrowserRouter([
         path: "enroll",
         element: <Enroll />,
       },
+      {
+        path: "thank-you",
+        element: <ThankYou />,
+      },
     ],
   },
 ]);
