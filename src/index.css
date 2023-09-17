@@ -10,3 +10,16 @@ body {
 #root{
   min-height: 100vh;  
 }
+.react-chatbot-kit-chat-container {
+width: auto !important;
+height: 100%;
+}
+
+.react-chatbot-kit-chat-inner-container,.react-chatbot-kit-chat-message-container{
+  height: 100% !important;
+}
+
+.react-chatbot-kit-chat-bot-message {
+  margin-left: 0 !important;
+  color: black !important;
+}
