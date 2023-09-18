@@ -5,8 +5,9 @@ import { JSX } from "react/jsx-runtime";
 
 import Button from "../components/Button";
 import SelectAge from "../components/SelectAge";
+import IConfig from "react-chatbot-kit/build/src/interfaces/IConfig";
 
-const config = {
+const config: IConfig = {
   botName: "Student Info System",
   initialMessages: [
     createChatBotMessage("Hello, Welcome to student info system!", {
@@ -40,12 +41,10 @@ const config = {
   },
   widgets: [
     {
+      props: {},
+      mapStateToProps: [],
       widgetName: "gotit",
-      widgetFunc: (
-        props: JSX.IntrinsicAttributes & {
-          actionProvider: { handleGotIt: () => void };
-        }
-      ) => (
+      widgetFunc: (props) => (
         <Button
           {...props}
           text="Got it!"
@@ -54,14 +53,16 @@ const config = {
       ),
     },
     {
+      props: {},
+      mapStateToProps: [],
       widgetName: "pickslot",
-      widgetFunc: (props: JSX.IntrinsicAttributes) => (
-        <DateOptions {...props} />
-      ),
+      widgetFunc: (props) => <DateOptions {...props} />,
     },
     {
+      props: {},
+      mapStateToProps:[],
       widgetName: "selectAge",
-      widgetFunc: (props: JSX.IntrinsicAttributes) => <SelectAge {...props} />,
+      widgetFunc: (props) => <SelectAge {...props} />,
     },
   ],
 };

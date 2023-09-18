@@ -1,8 +1,17 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { createClientMessage } from "react-chatbot-kit";
 import { useNavigate } from "react-router-dom";
 
-const ActionProvider = ({ createChatBotMessage, setState, children }) => {
+const ActionProvider = ({
+  createChatBotMessage,
+  setState,
+  children,
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  createChatBotMessage: any;
+  setState: Dispatch<SetStateAction<unknown>>;
+  children: JSX.Element;
+}) => {
   const navigate = useNavigate();
   const handleGotIt = () => {
     const userMessage = createClientMessage("Got it!", {});
