@@ -1,6 +1,8 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { createClientMessage } from "react-chatbot-kit";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../app/hooks";
+import { selectUser } from "../app/userSlice";
 
 const ActionProvider = ({
   createChatBotMessage,
@@ -13,6 +15,8 @@ const ActionProvider = ({
   children: JSX.Element;
 }) => {
   const navigate = useNavigate();
+  const age = useAppSelector(selectUser);
+
   const handleGotIt = () => {
     const userMessage = createClientMessage("Got it!", {});
 
@@ -49,7 +53,7 @@ const ActionProvider = ({
   };
 
   const handleLast = () => {
-    const userMessage = createClientMessage("27", {});
+    const userMessage = createClientMessage(age.toString(), {});
 
     const botMessage = createChatBotMessage(
       "Thank you. In 5 seconds, bot will exit",
@@ -57,10 +61,6 @@ const ActionProvider = ({
         withAvatar: false,
       }
     );
-    // const customMessage = createClientMessage(
-    //   "Thank you. In 5 seconds, bot will exit",
-    //   { widget: "customMessage" }
-    // );
 
     setState((prev: { messages: string }) => ({
       ...prev,

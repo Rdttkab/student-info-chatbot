@@ -6,7 +6,8 @@ interface DATE {
   time?: string;
 }
 
-export default function DateOptions(props) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function DateOptions(props: any) {
   const [, setSelectedDate] = useState<DATE>({} as DATE);
   const [showTime, setShowTime] = useState(false);
   const [showDate, setShowDate] = useState(true);
